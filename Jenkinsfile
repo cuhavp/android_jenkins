@@ -1,5 +1,4 @@
 node {
-  stages {
     stage('Compile') {
       steps {
         // Compile the app and its dependencies
@@ -69,4 +68,3 @@ node {
       mail to: 'dtha@fossil.com', subject: 'Oops!', body: "Build ${env.BUILD_NUMBER} failed; ${env.BUILD_URL}"
     }
   }
-}
