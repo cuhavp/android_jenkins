@@ -1,9 +1,4 @@
 node {
-
-  options {
-    // Stop the build early in case of compile or test failures
-    skipStagesAfterUnstable()
-  }
   stages {
     stage('Compile') {
       steps {
@@ -63,7 +58,7 @@ node {
       post {
         success {
           // Notify if the upload succeeded
-          mail to: 'beta-testers@example.com', subject: 'New build available!', body: 'Check it out!'
+          mail to: 'dtha@fossil.com', subject: 'New build available!', body: 'Check it out!'
         }
       }
     }
@@ -71,7 +66,7 @@ node {
   post {
     failure {
       // Notify developer team of the failure
-      mail to: 'android-devs@example.com', subject: 'Oops!', body: "Build ${env.BUILD_NUMBER} failed; ${env.BUILD_URL}"
+      mail to: 'dtha@fossil.com', subject: 'Oops!', body: "Build ${env.BUILD_NUMBER} failed; ${env.BUILD_URL}"
     }
   }
 }
